@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-
     color: #333;
 }
 
@@ -38,15 +37,16 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
     color: #ff6347;
+    transform: scale(1.1);
 }
 
 .hero {
-    background: url('https://www.thefashionisto.com/wp-content/uploads/2023/04/How-to-Wear-a-Denim-Shirt.jpg') no-repeat center center/cover;
+    background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
     color: white;
     height: 70vh;
     display: flex;
@@ -72,22 +72,18 @@ nav ul li a:hover {
     text-decoration: none;
     border-radius: 5px;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn:hover {
     background-color: #e5533d;
+    transform: scale(1.05);
 }
 
 .categories {
     padding: 2rem;
     text-align: center;
     background-color: #fff;
-}
-
-.categories h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
 }
 
 .category-list {
@@ -97,36 +93,72 @@ nav ul li a:hover {
 }
 
 .category {
-    background-color: white;
     margin: 0.5rem;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.category:hover {
+    transform: scale(1.1);
+}
+
+.products {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.products h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.product {
+    min-width: 250px;
+    background-color: white;
+    padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    overflow: hidden;
-    width: 300px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.category img {
+.product img {
     max-width: 100%;
-    border-bottom: 1px solid #ddd;
+    height: auto;
+    margin-bottom: 1rem;
 }
 
-.category h3 {
-    margin: 1rem 0;
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.about, .contact {
-    padding: 2rem;
-    text-align: center;
-}
-#shirts:target, #jackets:target, #lower:target {
-    display: block; /* Show the target */
+.product h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+.product .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
